@@ -5,14 +5,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import org.litterboxed.domain.FolderReader;
-import org.litterboxed.ui.HomeView;
+import org.litterboxed.domain.model.Movie;
 import org.litterboxed.repository.MovieRepository;
+import org.litterboxed.ui.HomeView;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Scanner;
-import java.sql.Connection;
+
+import static org.litterboxed.domain.MoviesLoader.MOVIES_INIT_DATA;
 
 public class LitterboxedApplication extends Application {
 
@@ -33,9 +33,10 @@ public class LitterboxedApplication extends Application {
         window.show();
     }
 
-    public static void main(String[] args) throws SQLException {
-//        launch(LitterboxedApplication.class, args);
-        MovieRepository movieRepository = new MovieRepository();
-        movieRepository.getConn();
+    public static void main(String[] args) throws SQLException, IOException {
+        launch(LitterboxedApplication.class, args);
+//        MovieRepository mr = new MovieRepository();
+//
+//        for (int i = 0; i < MOVIES_INIT_DATA.length; i++) {
     }
 }
