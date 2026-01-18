@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class ConnectionManager {
 
     public static Connection getConn() {
-        Connection conn = null;
+        Connection conn;
 
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/litterbox", "root", "");
